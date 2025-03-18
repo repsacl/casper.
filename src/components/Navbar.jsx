@@ -53,8 +53,8 @@ function Navbar() {
                     ease: "easeInOut"
                 }}
             >
-                <Links to="/">Home</Links>
-                {/* <Link to="/">Home</Link> */}
+                {/* <Links to="/">Home</Links> */}
+                <Link to="/">Home</Link>
             </motion.li>
             
             <motion.li
@@ -70,8 +70,8 @@ function Navbar() {
                     ease: "easeInOut"
                 }}
             >
-                <Links to="/about">About</Links>
-                {/* <Link to="/about">About</Link> */}
+                {/* <Links to="/about">About</Links> */}
+                <Link to="/about">About</Link>
             </motion.li>
 
             <motion.li
@@ -87,8 +87,8 @@ function Navbar() {
                     ease: "easeInOut"
                 }}
             >
-                <Links to="/contact">Contact</Links>
-                {/* <Link to="/contact">Contact</Link> */}
+                {/* <Links to="/contact">Contact</Links> */}
+                <Link to="/contact">Contact</Link>
             </motion.li>
         </motion.ul>
 

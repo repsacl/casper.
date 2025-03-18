@@ -2,7 +2,7 @@ import { motion } from "motion/react"
 import { Link } from "react-router-dom";
 
 
-const DURATION = 0.2;
+const DURATION = 0.3;
 const STAGGER = 0.02;
 const TextLink = ({ children, to }) => {
     return(

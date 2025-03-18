@@ -1,15 +1,25 @@
 import { useState } from "react"
-import ThemeToggle from "../components/useTheme.jsx"
+import { motion } from "motion/react"
 
 function About() {
 
   return (
-    <main>
-      <div className="flex flex-col justify-center items-center h-screen">
-        <h1 className="text-4xl font-bold">About</h1>
-        <ThemeToggle />
-      </div>
-    </main>
+    <>
+      <motion.div
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+
+       transition={{
+        duration: 1,
+        ease: "easeInOut"
+      }}
+
+      className="flex flex-col justify-center h-screen"
+      >
+        <h1 className="text-4xl text-center font-bold">About</h1>
+      </motion.div>
+    </>
   );
 }
 
