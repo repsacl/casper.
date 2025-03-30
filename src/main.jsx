@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react'
 import App from './pages/App.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import Projects from './pages/Projects.jsx'
 import LoadingPage from './pages/LoadingPage.jsx'
 import Nopage from './pages/Nopage.jsx'
 
@@ -61,8 +62,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: '/contact',
-        element: <Contact />,
+        path: '/projects',
+        element: <Projects />,
       },
     ],
   },

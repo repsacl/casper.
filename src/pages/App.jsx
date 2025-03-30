@@ -10,7 +10,7 @@ function App() {
       exit={{ opacity: 0 }}
 
       transition={{
-        duration: 1,
+        duration: .5,
         ease: "easeInOut"
       }}
     
