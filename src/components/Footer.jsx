@@ -9,7 +9,7 @@ function Footer() {
       <div className="mt-5 ml-2 flex-col justify-center text-xl w-fit gap-2">
           <h1 className="font-bold">Social</h1>
           <Links>Instagram</Links>
-          <Links>Linkedin</Links>
+          <Links>LinkedIn</Links>
           <Links>Github</Links>
       </div>
 
