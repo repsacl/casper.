@@ -12,7 +12,7 @@ import Projects from './pages/Projects.jsx'
 import LoadingPage from './pages/LoadingPage.jsx'
 import Nopage from './pages/Nopage.jsx'
 
-import NavBar from './components/NavBar.jsx'
+import NavBar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 
 import './index.css'
