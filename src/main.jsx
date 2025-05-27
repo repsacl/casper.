@@ -24,7 +24,7 @@ function Layout() {
     // Simulerer lasting av data
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
