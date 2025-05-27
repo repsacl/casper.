@@ -3,21 +3,32 @@ import ThemeToggle from "../components/useTheme"
 
 function Footer() {
   return (
-    // bg-gray-900 text-white dark:bg-gray-200 dark:text-black">
-    <footer className="flex h-fit justify-between flex-col border-t-1 border-solid  border-black dark:border-gray-200">
+    <footer className="flex flex-col border-t border-black dark:border-gray-200 mt-auto">
+      
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-6 gap-6">
+        
+        {/* Social Links */}
+        <div className="flex flex-col gap-2 w-full sm:w-auto">
+          <h1 className="font-bold text-lg sm:text-xl">Social</h1>
+          <div className="flex flex-col gap-1 text-base sm:text-lg">
+            <Links>Instagram</Links>
+            <Links>LinkedIn</Links>
+            <Links>Github</Links>
+          </div>
+        </div>
 
-      <div className="mt-5 ml-2 flex-col justify-center text-xl w-fit gap-2">
-          <h1 className="font-bold">Social</h1>
-          <Links>Instagram</Links>
-          <Links>LinkedIn</Links>
-          <Links>Github</Links>
+        {/* Theme Toggle */}
+        <div className="flex justify-center sm:justify-end w-full sm:w-auto">
+          <ThemeToggle />
+        </div>
+
       </div>
 
-      <div className="flex justify-center items-center">
-      <ThemeToggle />
-    </div>
-
-      <p className="text-center p-1">© 2025 Casper. All rights reserved.</p>
+      {/* Copyright */}
+        <p className="text-center text-sm sm:text-base p-3 sm:p-4">
+          © 2025 repsac
+        </p>
+      
     </footer>
   );
 }

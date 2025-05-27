@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 @import "tailwindcss";
-
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-sans: 'Zain', sans-serif;
+  --font-mono: 'Zain', monospace;
   --radius: 0.625rem;
   --background: oklch(.95 0 0);
   --foreground: oklch(0.145 0 0);
