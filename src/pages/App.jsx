@@ -18,7 +18,7 @@ function App() {
     >
         <div className="text-center mt-20">
           <h1 className="text-[7rem] sm:text-[9rem] md:text-[10rem] lg:text-[12rem] xl:text-[15rem] uppercase leading-tight">
-            Casper<span className="text-lg sm:text-xl md:text-2xl capitalize underline underline-offset-2"> Landberg</span>
+            Repsac<span className="text-lg sm:text-xl md:text-2xl capitalize underline underline-offset-2"></span>
           </h1>
         </div>
 
