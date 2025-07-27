@@ -68,7 +68,7 @@ function Navbar() {
                         ease: "easeInOut"
                     }}
                 >
-                    <Link to="/">Home</Link>
+                    <Link to="/">Hjem</Link>
                 </motion.li>
                 
                 <motion.li
@@ -85,7 +85,7 @@ function Navbar() {
                         ease: "easeInOut"
                     }}
                 >
-                    <Link to="/about">About</Link>
+                    <Link to="/about">Om</Link>
                 </motion.li>
 
                 <motion.li
@@ -102,7 +102,7 @@ function Navbar() {
                         ease: "easeInOut"
                     }}
                 >
-                    <Link to="/projects">Projects</Link>
+                    <Link to="/projects">Prosjekter</Link>
                 </motion.li>
             </motion.ul>
 

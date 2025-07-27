@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
 
+import TypeWriter from "@/components/ui/TypeWriter";
+
 function App() {
   return (
   <> 
@@ -22,13 +24,16 @@ function App() {
           </h1>
         </div>
 
-      <div className="flex justify-center mt-8 sm:mt-16 md:mt-24">
-        <div className="text-center px-4">
-          {/* Her kan du legge til mer innhold senere */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
-            {/* Placeholder for fremtidig innhold */}
-          </p>
+      <div className="flex justify-center mt-0 sm:mt-0 md:mt-0">
+        <div className="text-center font-light px-4 text-xl">
+            <div className="flex items-center justify-center flex-wrap">
+              <span>Hei, mitt navn er&nbsp;</span>
+              <span className="inline-block">
+                <TypeWriter />
+              </span>
+            </div>
         </div>
+
       </div>
     </motion.div>
   </>

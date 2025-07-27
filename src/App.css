@@ -3,3 +3,7 @@
     text-rendering: optimizeLegibility;
     font-kerning: normal;
   }
+
+  .animate-pulse {
+  animation: pulse 1s steps(1, end) infinite;
+}

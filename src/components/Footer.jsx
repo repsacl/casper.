@@ -9,7 +9,7 @@ function Footer() {
         
         {/* Social Links */}
         <div className="flex flex-col gap-2 w-full sm:w-auto">
-          <h1 className="font-bold text-lg sm:text-xl">Social</h1>
+          {/* <h1 className="font-bold text-lg sm:text-xl">Social</h1> */}
           <div className="flex flex-col gap-1 text-base sm:text-lg">
             <Links>Instagram</Links>
             <Links>LinkedIn</Links>

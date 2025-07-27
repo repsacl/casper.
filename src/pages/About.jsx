@@ -17,7 +17,7 @@ function About() {
 
       className="flex flex-col justify-center h-screen"
       >
-        <h1 className="text-4xl text-center font-bold">About</h1>
+        <h1 className="text-4xl text-center font-bold">Om</h1>
       </motion.div>
     </>
   );

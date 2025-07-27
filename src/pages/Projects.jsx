@@ -16,7 +16,7 @@ function Projects() {
 
        className="min-h-screen px-4 py-8"
        >
-        <h1 className="text-3xl sm:text-4xl text-center font-bold mb-8 sm:mb-12">Projects</h1>
+        <h1 className="text-3xl sm:text-4xl text-center font-bold mb-8 sm:mb-12">Prosjekter</h1>
 
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-8 max-w-6xl mx-auto'>
 
