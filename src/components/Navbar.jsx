@@ -47,7 +47,7 @@ function Navbar() {
                 </Link>
             </motion.div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation
             <motion.ul 
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -104,78 +104,8 @@ function Navbar() {
                 >
                     <Link to="/projects">Prosjekter</Link>
                 </motion.li>
-            </motion.ul>
-
-            {/* Mobile Menu Button */}
-            <motion.div
-                initial={{ opacity: 0, y: -100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: .9, type: "spring", bounce: 0.3, delay: .4, ease: "easeInOut" }}
-                className="md:hidden"
-            >
-                <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={{
-                        duration: DURATION,
-                        ease: "easeInOut"
-                    }}
-                    onClick={() => setSideBar(!sideBar)}
-                    className="h-12 w-12 cursor-pointer rounded-3xl m-1 p-3 font-bold text-lg bg-black text-white dark:bg-gray-200 dark:text-black flex items-center justify-center"
-                >
-                    {sideBar ? <X size={20} /> : <Menu size={20} />}
-                </motion.div>
-            </motion.div>
+            </motion.ul> */}
         </motion.nav>
-
-        {/* Mobile Sidebar */}
-        <AnimatePresence>
-            {sideBar && (
-                <>
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={() => setSideBar(false)}
-                        className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-                    />
-                    
-                    {/* Sidebar */}
-                    <motion.div
-                        initial={{ x: "100%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: "100%" }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="fixed top-0 right-0 h-full w-64 bg-white dark:bg-transparent shadow-lg z-50 md:hidden"
-                    >
-                        <div className="flex flex-col p-6 pt-20">
-                            <Link 
-                                to="/" 
-                                onClick={() => setSideBar(false)}
-                                className="py-4 text-xl font-medium text-black dark:text-white border-b border-gray-200 dark:border-gray-700"
-                            >
-                                Home
-                            </Link>
-                            <Link 
-                                to="/about" 
-                                onClick={() => setSideBar(false)}
-                                className="py-4 text-xl font-medium text-black dark:text-white border-b border-gray-200 dark:border-gray-700"
-                            >
-                                About
-                            </Link>
-                            <Link 
-                                to="/projects" 
-                                onClick={() => setSideBar(false)}
-                                className="py-4 text-xl font-medium text-black dark:text-white"
-                            >
-                                Projects
-                            </Link>
-                        </div>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence>
     </>
   )
 }
