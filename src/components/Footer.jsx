@@ -8,14 +8,14 @@ function Footer() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 sm:p-6 gap-6">
         
         {/* Social Links */}
-        <div className="flex flex-col gap-2 w-full sm:w-auto">
+        {/* <div className="flex flex-col gap-2 w-full sm:w-auto"> */}
           {/* <h1 className="font-bold text-lg sm:text-xl">Social</h1> */}
-          <div className="flex flex-col gap-1 text-base sm:text-lg">
+          {/* <div className="flex flex-col gap-1 text-base sm:text-lg">
             <Links>Instagram</Links>
             <Links>LinkedIn</Links>
             <Links>Github</Links>
           </div>
-        </div>
+        </div> */}
 
         {/* Theme Toggle */}
         <div className="flex justify-center sm:justify-end w-full sm:w-auto">
