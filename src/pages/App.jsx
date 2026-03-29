@@ -19,7 +19,7 @@ function App() {
     className="flex flex-col justify-center mb-150 px-4"
     >
         <div className="text-center mt-20">
-          <h1 className="text-[7rem] sm:text-[7rem] md:text-[10rem] lg:text-[12rem] xl:text-[23rem] uppercase leading-tight">
+          <h1 className="text-[5rem] sm:text-[5rem] md:text-[10rem] lg:text-[12rem] xl:text-[23rem] uppercase leading-tight">
             Repsac<span className="capitalize"></span>
           </h1>
         </div>
