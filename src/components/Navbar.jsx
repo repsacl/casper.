@@ -3,7 +3,15 @@ import { Menu, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
 
+import ThemeToggle from "./useTheme"
+
 const DURATION = 0.22;
+
+const navItems = [
+    { to: "/", label: "Hjem" },
+    { to: "/about", label: "Om" },
+    { to: "/projects", label: "Prosjekter" },
+];
 
 function Navbar() {
     const [sideBar, setSideBar] = useState(false);
@@ -47,64 +55,35 @@ function Navbar() {
                 </Link>
             </motion.div>
 
-            {/* Desktop Navigation
-            <motion.ul 
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: .5, scale: { type: "spring", visualDuration: 0.4, bounce: 0.3 } }}
-                className="hidden md:flex w-fit rounded-4xl m-1 gap-8 p-3 px-8 text-xl border-solid border-2 border-black text-black dark:text-white dark:border-white"
-            >
-                <motion.li
-                    initial="initial"
-                    whileHover="hovered"
-                    className="cursor-pointer"
-                    whileTap={{ scale: 0.85 }}
-                    variants={{
-                        initial: {opacity: 0.8, scale: 1},
-                        hovered: {opacity: 1, scale: 1.2}
-                    }}
-                    transition={{
-                        duration: DURATION,
-                        ease: "easeInOut"
-                    }}
+            <div className="hidden md:flex items-center gap-3">
+                <motion.ul
+                    initial={{ opacity: 0, y: -12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+                    className="flex items-center gap-1 rounded-full border-2 border-black/80 bg-white/80 p-1.5 text-sm font-medium text-black shadow-sm backdrop-blur-sm dark:border-white/80 dark:bg-black/20 dark:text-white"
                 >
-                    <Link to="/">Hjem</Link>
-                </motion.li>
-                
-                <motion.li
-                    initial="initial"
-                    whileHover="hovered"
-                    className="cursor-pointer"
-                    whileTap={{ scale: 0.85 }}
-                    variants={{
-                        initial: {opacity: 0.8, scale: 1},
-                        hovered: {opacity: 1, scale: 1.2}
-                    }}
-                    transition={{
-                        duration: DURATION,
-                        ease: "easeInOut"
-                    }}
-                >
-                    <Link to="/about">Om</Link>
-                </motion.li>
+                    {navItems.map(({ to, label }) => (
+                        <motion.li
+                            key={to}
+                            whileHover={{ y: -2, scale: 1.02 }}
+                            whileTap={{ scale: 0.96 }}
+                            transition={{ duration: DURATION, ease: "easeInOut" }}
+                            className="list-none"
+                        >
+                            <Link
+                                to={to}
+                                className="block rounded-full px-4 py-2 transition-colors duration-200 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                            >
+                                {label}
+                            </Link>
+                        </motion.li>
+                    ))}
+                </motion.ul>
 
-                <motion.li
-                    initial="initial"
-                    whileHover="hovered"
-                    className="cursor-pointer"
-                    whileTap={{ scale: 0.85 }}
-                    variants={{
-                        initial: {opacity: 0.8, scale: 1},
-                        hovered: {opacity: 1, scale: 1.2}
-                    }}
-                    transition={{
-                        duration: DURATION,
-                        ease: "easeInOut"
-                    }}
-                >
-                    <Link to="/projects">Prosjekter</Link>
-                </motion.li>
-            </motion.ul> */}
+                <div className="flex items-center justify-center rounded-full border-2 border-black/80 bg-white/80 p-1.5 shadow-sm backdrop-blur-sm dark:border-white/80 dark:bg-black/20">
+                    <ThemeToggle />
+                </div>
+            </div>
         </motion.nav>
     </>
   )

@@ -5,7 +5,7 @@ function TypeWriter() {
   return (
         <Typewriter
           options={{
-            strings: ["Casper", ""],
+            strings: ["Casper", "Casper Landberg"],
             autoStart: true,
             loop: true,
             delay: 75,

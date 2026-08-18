@@ -21,14 +21,15 @@ function Projects() {
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-8 max-w-6xl mx-auto'>
 
           <div className="flex flex-col w-full lg:w-1/2 order-2 lg:order-1">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Project 1</h2>
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ex corrupti modi fugiat nihil quisquam quos perspiciatis dolores iusto tenetur odit voluptate! Soluta, dolorum beatae! Eos reprehenderit quis dolores voluptate!
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Skole porsjektet</h2>
+            <p className="text-sm font-medium sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
+              I slutten 10.klasse lagde et spill som en del et skoleprosjekt i Kunts&Håndtverk. Dette spillet ble laget med Unity og C#. Spillet er et 2D plattformspill hvor spilleren må navigere gjennom ulike nivåer, unngå hindringer og samle poeng. Prosjektet ga meg mye verdifull erfaring med hva som innebærer med programmering og problemløsning.
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-light hover:underline"> Link til spillet</a>
             </p>
           </div>
 
           <div className="w-full sm:w-3/4 lg:w-1/2 order-1 lg:order-2">
-            <div className='h-48 sm:h-56 md:h-64 lg:h-80 w-full bg-gray-300 dark:bg-gray-600 rounded-2xl shadow-lg'></div>
+            <img src="/src/assets/BildeSpill.png" alt="Project 1" className='h-48 sm:h-56 md:h-64 lg:h-80 w-full object-cover rounded-2xl shadow-lg' />
           </div>
 
         </div>
@@ -37,13 +38,13 @@ function Projects() {
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-8 max-w-6xl mx-auto mt-12 lg:mt-16'>
 
           <div className="w-full sm:w-3/4 lg:w-1/2">
-            <div className='h-48 sm:h-56 md:h-64 lg:h-80 w-full bg-gray-300 dark:bg-gray-600 rounded-2xl shadow-lg'></div>
+            <img src="/src/assets/landbergbygg.png" alt="Project 2" className='h-48 sm:h-56 md:h-64 lg:h-80 w-full object-cover rounded-2xl shadow-lg' />
           </div>
 
           <div className="flex flex-col w-full lg:w-1/2">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Project 2</h2>
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec odio vitae odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ex corrupti modi fugiat nihil quisquam quos perspiciatis dolores iusto tenetur odit voluptate!
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Nettside: <a href="https://landbergbygg.no" target="_blank" rel="noopener noreferrer" className="font-light text-blue-500 hover:underline">landbergbygg.no</a></h2>
+            <p className="text-sm font-medium sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
+              Jeg har lagde en nettside for broren min sitt tømrerfirma. Dette prosjektet ga meg helhetlig erfaring med hvordan bruke react og javascript. Jeg lærte hvordan man kan lage en nettside og lære hvordan man kan bruke ulike verktøy for å hoste nettsiden.
             </p>
           </div>
 
