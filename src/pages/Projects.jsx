@@ -21,9 +21,9 @@ function Projects() {
         <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start gap-6 lg:gap-8 max-w-6xl mx-auto'>
 
           <div className="flex flex-col w-full lg:w-1/2 order-2 lg:order-1">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Skole porsjektet</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-center lg:text-left">Skole prosjektet</h2>
             <p className="text-sm font-medium sm:text-base lg:text-lg leading-relaxed text-center lg:text-left">
-              I slutten 10.klasse lagde et spill som en del et skoleprosjekt i Kunts&Håndtverk. Dette spillet ble laget med Unity og C#. Spillet er et 2D plattformspill hvor spilleren må navigere gjennom ulike nivåer, unngå hindringer og samle poeng. Prosjektet ga meg mye verdifull erfaring med hva som innebærer med programmering og problemløsning.
+              I slutten 10.klasse lagde et spill som en del et skoleprosjekt i Kunst&Håndtverk. Dette spillet ble laget med Unity og C#. Spillet er et 2D plattformspill hvor spilleren må navigere gjennom ulike nivåer, unngå hindringer og samle poeng. Prosjektet ga meg mye verdifull erfaring med hva som innebærer med programmering og problemløsning.
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-500 font-light hover:underline"> Link til spillet</a>
             </p>
           </div>
