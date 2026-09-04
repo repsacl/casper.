@@ -1,50 +1,70 @@
+import { useEffect } from "react"
 import { motion } from "motion/react"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 
 import TypeWriter from "@/components/ui/TypeWriter";
 
 function App() {
+  // Satt av Layout i main.jsx. "true" kun helt til vi selv har
+  // mountet én gang rett etter loaderen — deretter false for alltid,
+  // slik at senere navigasjon hit (fra About/Projects) fader inn
+  // akkurat som de andre sidene gjør.
+  const { skipHomeEnterRef } = useOutletContext() ?? {};
+  const skipEnterAnimation = skipHomeEnterRef?.current ?? false;
+
+  useEffect(() => {
+    if (skipHomeEnterRef) {
+      skipHomeEnterRef.current = false;
+    }
+  }, [skipHomeEnterRef]);
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={skipEnterAnimation ? false : { opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{
         duration: 0.5,
         ease: "easeInOut",
       }}
-      className="flex min-h-[calc(100vh-8rem)] flex-col items-center justify-center mb-10 px-4 py-12 text-center"
+      className="flex min-h-[calc(100vh-4rem)] w-full flex-col justify-end px-6 pb-10 pt-24 text-left sm:px-10 lg:px-16"
     >
-      <div className="mb-5 flex flex-col items-center justify-center gap-2">
-        <h1 className="bg-gradient-to-r from-sky-400 via-violet-500 to-pink-500 bg-clip-text text-[5.5rem] font-black uppercase leading-none text-transparent sm:text-[5.5rem] md:text-[8rem] lg:text-[10rem] xl:text-[16rem]">
-          Casper
-        </h1>
-      </div>
-
-      <div className="mb-6 flex flex-wrap items-center justify-center gap-2 px-4 text-xl font-light leading-tight sm:text-2xl">
-        <span>Hei, mitt navn er</span>
-        <span className="inline-block">
-          <TypeWriter />
+      <div className="mb-4 ml-8 flex max-w-xl flex-col gap-1 text-lg text-gray-600 dark:text-gray-400 sm:text-xl">
+        <span className="flex flex-wrap items-center gap-2">
+          <span>Hei, mitt navn er</span>
+          <span className="inline-block">
+            <TypeWriter />
+          </span>
         </span>
+        <span>Student &amp; fremtidig fullstack utvikler — velkommen til min portefølje.</span>
       </div>
 
-      <p className="mb-10 max-w-2xl px-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:text-lg">
-        Velkommen til min portefølje! Jeg liker å lage ting med kode og her kan lære litt mer om meg.
-      </p>
+      {/* Samme layoutId som h1-en i Loader.jsx. Motion morfer
+          automatisk fra den lille loader-teksten til denne
+          store gradient-overskriften. */}
+      <motion.h1
+        layoutId="casper-heading"
+        className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent text-[10rem] font-black uppercase leading-none sm:text-[22rem]"
+      >
+        Casper
+      </motion.h1>
 
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="mt-8 mb-8 flex flex-wrap justify-left items-center gap-4 ml-8">
+
         <Link
           to="/projects"
-          className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-transform duration-200 hover:-translate-y-0.5 dark:bg-white dark:text-black"
+          className="rounded-full bg-black px-6 py-3 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md dark:bg-white dark:text-black"
         >
           Se prosjekter
         </Link>
+
         <Link
           to="/about"
           className="rounded-full border border-black/80 px-6 py-3 text-sm font-medium text-black transition-colors duration-200 hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
         >
           Les om meg
         </Link>
+
       </div>
     </motion.div>
   );
