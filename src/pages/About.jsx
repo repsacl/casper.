@@ -32,18 +32,12 @@ function About() {
       animate="animate"
       exit={{ opacity: 0 }}
       variants={container}
-      className="mx-auto flex min-h-screen max-w-5xl flex-col items-center gap-10 px-6 py-20 sm:py-28 lg:flex-row-reverse lg:items-start lg:gap-16"
+      className="mx-auto flex min-h-screen max-w-5xl flex-col items-center gap-10 px-6 py-20 sm:py-28 lg:flex-row lg:items-start lg:gap-16"
     >
-      {/* Bildet: høyt og smalt (237x708), peker mot teksten.
-          Ingen bakgrunn/beskjæring — object-contain beholder cutout-formen. */}
-      <motion.img
-        variants={item}
-        // TODO: bytt til riktig filsti, f.eks. "/casper-about.png" (fil i public-mappen)
-        src="/casper-siden.png"
-        alt="Casper Landberg"
-        className="h-[42vh] w-auto shrink-0 object-contain sm:h-[52vh] lg:mt-2 lg:h-[65vh]"
-      />
-
+      {/* Teksten ligger først i DOM-en nå, så den havner øverst på
+          mobil (flex-col) og bildet kommer under. På desktop bruker
+          vi lg:flex-row (ikke reverse), så bildet ender opp til
+          høyre for teksten — samme visuelle resultat som før. */}
       <div className="flex flex-col items-center text-center lg:items-start lg:pt-6 lg:text-left">
         <motion.h1
           variants={item}
@@ -67,9 +61,9 @@ function About() {
           </p>
 
           <p>
-            Gjennom egne prosjekter og læring har jeg fått erfaring med React,
-            JavaScript og CSS, både når det gjelder utvikling av nettsider og
-            applikasjoner. Jeg har også jobbet med C# i forbindelse med utvikling av
+            Gjennom egne prosjekter har jeg fått erfaring med React,
+            JavaScript og CSS. 
+            Jeg har også jobbet med C# i forbindelse med utvikling av
             spill i Unity.
           </p>
 
@@ -77,7 +71,7 @@ function About() {
             På videregående tok jeg studiespesialisering med realfag, og jeg har
             alltid vært interessert i programmering. Derfor valgte jeg valgfagene
             IT1 og IT2. I IT1 lærte jeg grunnleggende webutvikling med HTML, CSS,
-            JavaScript og MySQL, og i IT2 lærte jeg Python til å lage små
+            JavaScript og SQL database. IT2 lærte jeg Python for å lage små
             applikasjoner.
           </p>
           <p>
@@ -103,20 +97,20 @@ function About() {
             ))}
           </div>
         </motion.div>
+      </div>
 
-        <div className="flex items-center">
+      {/* Bildet: høyt og smalt (237x708), peker mot teksten.
+          Ingen bakgrunn/beskjæring — object-contain beholder cutout-formen.
+          Ligger sist i DOM-en, så det havner nederst på mobil og til
+          høyre for teksten på desktop. */}
       <motion.img
         variants={item}
         // TODO: bytt til riktig filsti, f.eks. "/casper-about.png" (fil i public-mappen)
-        src="/casper-opp.png"
+        src="/casper-siden.png"
         alt="Casper Landberg"
-        className="h-[32vh] w-auto shrink-0 object-contain sm:h-[42vh] lg:mt-2 lg:h-[52vh]"
+        className="h-[42vh] w-auto shrink-0 object-contain sm:h-[52vh] lg:mt-2 lg:h-[65vh]"
       />
-        </div>
-
-      </div>
     </motion.div>
-
   );
 }
 
