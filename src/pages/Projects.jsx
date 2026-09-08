@@ -61,7 +61,7 @@ const projects = [
     title: "Lego-robot",
     description: (
       <>
-        Kommer snart..
+        Kommer snart...
       </>
     ),
     image: "",

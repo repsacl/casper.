@@ -25,18 +25,29 @@ function Navbar() {
         }
     }, [sideBar]);
 
+    // Lukk mobilmenyen automatisk hvis skjermen blir bred nok til
+    // at desktop-navigasjonen vises igjen (f.eks. ved rotasjon/resize).
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768) {
+                setSideBar(false);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     // Nullstiller scroll synkront i selve klikk-øyeblikket, FØR React
-    // rekker å bytte side. Dette er mer robust enn å vente på et effect
-    // etter navigasjonen, siden det ikke er noen race mot når
-    // framer-motion måler nav-pillens posisjon.
+    // rekker å bytte side, og lukker mobilmenyen samtidig.
     const handleNavClick = () => {
         window.scrollTo(0, 0);
+        setSideBar(false);
     };
 
   return (
     <>
         <motion.nav
-            className="fixed inset-x-0 top-3 z-50 flex items-center justify-center gap-3 px-3"
+            className="fixed inset-x-0 top-3 z-50 flex items-center justify-between gap-3 px-3 md:justify-center"
         >
             {/* Logo */}
             <motion.div
@@ -119,7 +130,72 @@ function Navbar() {
                     <ThemeToggle />
                 </motion.div>
             </div>
+
+            {/* Hamburger-knapp — kun synlig under md-breakpointet */}
+            <motion.button
+                type="button"
+                onClick={() => setSideBar((prev) => !prev)}
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: .9, type: "spring", bounce: 0.3, delay: 1, ease: "easeInOut" }}
+                whileTap={{ scale: 0.9 }}
+                aria-label={sideBar ? "Lukk meny" : "Åpne meny"}
+                aria-expanded={sideBar}
+                className="flex h-12 w-12 items-center justify-center rounded-3xl border-2 border-black/80 bg-white/80 text-black shadow-sm backdrop-blur-sm dark:border-white/80 dark:bg-black/20 dark:text-white md:hidden"
+            >
+                {sideBar ? <X size={20} /> : <Menu size={20} />}
+            </motion.button>
         </motion.nav>
+
+        {/* Mobilmeny: mørk overlay + panel med nav-lenker og temavalg */}
+        <AnimatePresence>
+            {sideBar && (
+                <>
+                    <motion.div
+                        key="overlay"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: DURATION }}
+                        onClick={() => setSideBar(false)}
+                        className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden"
+                    />
+
+                    <motion.div
+                        key="panel"
+                        initial={{ opacity: 0, y: -16, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -16, scale: 0.98 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="fixed inset-x-4 top-20 z-50 flex flex-col gap-2 rounded-3xl border-2 border-black/80 bg-white/95 p-4 text-black shadow-lg backdrop-blur-sm dark:border-white/80 dark:bg-black/90 dark:text-white md:hidden"
+                    >
+                        {navItems.map(({ to, label }) => {
+                            const isActive = location.pathname === to;
+
+                            return (
+                                <Link
+                                    key={to}
+                                    to={to}
+                                    onClick={handleNavClick}
+                                    className={`rounded-2xl px-4 py-3 text-base font-medium transition-colors duration-200 ${
+                                        isActive
+                                            ? "bg-black text-white dark:bg-white dark:text-black"
+                                            : "hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                                    }`}
+                                >
+                                    {label}
+                                </Link>
+                            );
+                        })}
+
+                        <div className="mt-2 flex items-center justify-between rounded-2xl border border-black/10 px-4 py-3 dark:border-white/10">
+                            <span className="text-sm font-medium">Tema</span>
+                            <ThemeToggle />
+                        </div>
+                    </motion.div>
+                </>
+            )}
+        </AnimatePresence>
     </>
   )
 }
