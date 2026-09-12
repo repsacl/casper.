@@ -36,7 +36,7 @@ const projects = [
       </>
     ),
     linkHref: "#",
-    linkLabel: "Link til spillet",
+    linkLabel: "Link til spillet kommer...",
     image: "/src/assets/BildeSpill2.png",
     imageAlt: "Skjermbilde fra plattformspillet",
     reverse: true,
