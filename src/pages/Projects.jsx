@@ -37,7 +37,7 @@ const projects = [
     ),
     linkHref: "#",
     linkLabel: "Link til spillet kommer...",
-    image: "/src/assets/BildeSpill2.png",
+    image: "/BildeSpill2.png",
     imageAlt: "Skjermbilde fra plattformspillet",
     reverse: true,
   },
@@ -52,7 +52,7 @@ const projects = [
         man bygger og hoster en nettside med ulike verktøy.
       </>
     ),
-    image: "/src/assets/landbergbygg.png",
+    image: "/landbergbygg.png",
     imageAlt: "Skjermbilde fra landbergbygg.no",
     reverse: false,
   },
