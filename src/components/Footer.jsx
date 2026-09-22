@@ -10,13 +10,13 @@ function Footer() {
           </span>
           <div className="flex flex-col gap-2 text-base sm:flex-row sm:items-center sm:gap-5 sm:text-lg">
             <Links>LinkedIn</Links>
-            <Links to={"https://github.com/repsacl"}>Github</Links>
+            <Links>Github</Links>
           </div>
         </div>
 
-      <div className="flex flex-col justify-center items-center px-4 pb-3 text-center text-[10px] font-light sm:text-[14px] mt-5">
-        &copy; 2026 Casper Landberg
-      </div>
+        <div className="flex flex-col justify-center items-center px-4 pb-3 text-center text-[10px] font-light sm:text-[14px] mt-5">
+          &copy; 2026 Casper Landberg
+        </div>
 
         <div className="flex flex-col gap-3">
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
