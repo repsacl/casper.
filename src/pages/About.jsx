@@ -62,7 +62,7 @@ function About() {
 
           <p>
             Gjennom egne prosjekter har jeg fått erfaring med React,
-            JavaScript og CSS. 
+            JavaScript og CSS.
             Jeg har også jobbet med C# i forbindelse med utvikling av
             spill i Unity.
           </p>
@@ -75,7 +75,7 @@ function About() {
             applikasjoner.
           </p>
           <p>
-            Nå holder jeg på å ta en 3 årig beachlor i dataingeniør-systemutvikling. Her lærer jeg hovedsakelig java for å bli en fullstack systemutvikler. 
+            Nå holder jeg på å ta en 3 årig beachlor i dataingeniør-systemutvikling. Her lærer jeg hovedsakelig java for å bli en fullstack systemutvikler.
           </p>
         </motion.div>
 
@@ -103,13 +103,13 @@ function About() {
           Ingen bakgrunn/beskjæring — object-contain beholder cutout-formen.
           Ligger sist i DOM-en, så det havner nederst på mobil og til
           høyre for teksten på desktop. */}
-      <motion.img
+      {/* <motion.img
         variants={item}
         // TODO: bytt til riktig filsti, f.eks. "/casper-about.png" (fil i public-mappen)
         src="/casper-siden.png"
         alt="Casper Landberg"
         className="h-[42vh] w-auto shrink-0 object-contain sm:h-[52vh] lg:mt-2 lg:h-[65vh]"
-      />
+      /> */}
     </motion.div>
   );
 }

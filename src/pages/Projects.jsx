@@ -61,11 +61,16 @@ const projects = [
     title: "Lego-robot",
     description: (
       <>
-        Kommer snart...
+        I emnet "Teambasert-samhandling" bygde og programmerte jeg en Lego-robot i Python i et team på fire personer.
+        Vi startet med en robot som hadde enkel motorstyring og jobbet oss fram til en lego-robot som kunne følge en ukjent bane hvor vi konkurrerte mot andre grupper.
+        Vi lærte hvordan jobbe som et team og lage en arbeidskontrakt hvor vi fordelte ansvar og satte oss mål for prosjektet.
+        Jeg har lært mye om teamarbeid i form av diskusjoner om design, kode og problemløsning.
+        I tillegg har jeg fått litt praktisk erfaring med trening i ledelse og
+        kommunikasjon etter som at jeg var team-leder.
       </>
     ),
-    image: "",
-    imageAlt: "",
+    image: "/lego-robot-1.png",
+    imageAlt: "Skjerbilde av en lego-robot",
     reverse: true,
   },
 ];
