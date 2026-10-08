@@ -44,7 +44,7 @@ const projects = [
     linkHref: "#",
     linkLabel: "Link til spillet kommer...",
     githubHref: "https://github.com/", // TODO: bytt ut med din repo-lenke
-    image: "/BildeSpill2.png",
+    image: "/BildeSpill2.webp",
     imageAlt: "Skjermbilde fra plattformspillet",
     images: [
       // { src: "/BildeSpill1.png", alt: "Skjermbilde fra et tidlig nivå" },
@@ -63,7 +63,7 @@ const projects = [
       </>
     ),
     githubHref: "https://github.com/repsacl/landbergbygg",
-    image: "/landbergbygg.png",
+    image: "/landbergbygg.webp",
     imageAlt: "Skjermbilde fra landbergbygg.no",
     linkLabel: "landbergbygg.no",
     linkHref: "https://landbergbygg.no",
@@ -82,7 +82,7 @@ const projects = [
       </>
     ),
     githubHref: "https://git.ntnu.no/IDATT1004-Team19-H2026/IDATT1004_gr19_Innledende-lego-oppgaver", // TODO
-    image: "/lego-robot-1.png",
+    image: "/lego-robot-1.webp",
     imageAlt: "Skjermbilde av en lego-robot",
     reverse: true,
   },
@@ -102,7 +102,7 @@ const projects = [
       </>
     ),
     githubHref: "https://github.com/repsacl/casper.",
-    image: "/portfolio.png", // TODO: legg et skjermbilde av porteføljen i /public
+    image: "/portfolio.webp", // TODO: legg et skjermbilde av porteføljen i /public
     imageAlt: "Skjermbilde av denne porteføljen",
     reverse: false,
   },

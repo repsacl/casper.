@@ -70,7 +70,7 @@ const Loader = () => {
           Naturlig portrett-format (364x604) beholdes med h-auto. */}
       <motion.img
         // TODO: bytt til riktig filsti, f.eks. "/casper.png" (fil i public-mappen)
-        src="/casper-opp.png"
+        src="/casper-opp.webp"
         alt="Casper"
         variants={imageVariants}
         initial="initial"

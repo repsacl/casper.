@@ -105,7 +105,7 @@ function About() {
           høyre for teksten på desktop. */}
       <motion.img
         variants={item}
-        src="/casper-siden.png"
+        src="/casper-siden.webp"
         alt="Casper Landberg"
         className="h-[42vh] w-auto shrink-0 object-contain sm:h-[52vh] lg:mt-2 lg:h-[65vh]"
       />
