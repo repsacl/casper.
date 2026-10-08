@@ -9,8 +9,8 @@ function Footer() {
             Links
           </span>
           <div className="flex flex-col gap-2 text-base sm:flex-row sm:items-center sm:gap-5 sm:text-lg">
-            <Links>LinkedIn</Links>
-            <Links>Github</Links>
+            <Links to={"https://www.linkedin.com/in/casper-landberg-56371443b/"}>LinkedIn</Links>
+            <Links to={"https://github.com/repsacl"}>Github</Links>
           </div>
         </div>
 
