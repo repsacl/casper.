@@ -102,7 +102,7 @@ const projects = [
       </>
     ),
     githubHref: "https://github.com/repsacl/casper.",
-    image: "/portefolje.png", // TODO: legg et skjermbilde av porteføljen i /public
+    image: "/portfolio.png", // TODO: legg et skjermbilde av porteføljen i /public
     imageAlt: "Skjermbilde av denne porteføljen",
     reverse: false,
   },
