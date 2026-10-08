@@ -103,13 +103,12 @@ function About() {
           Ingen bakgrunn/beskjæring — object-contain beholder cutout-formen.
           Ligger sist i DOM-en, så det havner nederst på mobil og til
           høyre for teksten på desktop. */}
-      {/* <motion.img
+      <motion.img
         variants={item}
-        // TODO: bytt til riktig filsti, f.eks. "/casper-about.png" (fil i public-mappen)
         src="/casper-siden.png"
         alt="Casper Landberg"
         className="h-[42vh] w-auto shrink-0 object-contain sm:h-[52vh] lg:mt-2 lg:h-[65vh]"
-      /> */}
+      />
     </motion.div>
   );
 }

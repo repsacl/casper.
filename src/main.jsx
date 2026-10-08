@@ -14,6 +14,7 @@ import Nopage from './pages/Nopage.jsx'
 
 import NavBar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import Background from './components/Background.jsx'
 
 import './index.css'
 
@@ -46,26 +47,32 @@ function Layout() {
   }, [isHomePage]);
 
   return (
-    // Ingen mode="wait" her: Loader og hovedsiden må overlappe et
-    // øyeblikk for at "Casper"-teksten skal kunne morfe sømløst
-    // mellom dem via layoutId (se Loader.jsx og App.jsx).
-    <AnimatePresence>
-      {loading ? (
-        <LoadingPage key="loading" />
-      ) : (
-        // Ingen opacity-fade på selve wrapperen, siden det ville
-        // fadet ut/inn den morfende "Casper"-teksten sammen med resten.
-        <div key="content">
-          <NavBar />
-          <main className="flex-grow pt-24">
-            <AnimatePresence initial={false}>
-              <Outlet context={{ skipHomeEnterRef }} />
-            </AnimatePresence>
-          </main>
-          <Footer />
-        </div>
-      )}
-    </AnimatePresence>
+    <>
+      {/* Ligger utenfor AnimatePresence, så bakgrunnen blir stående
+          (og fortsetter å svive) både bak loaderen og mellom sidene. */}
+      <Background />
+
+      {/* Ingen mode="wait" her: Loader og hovedsiden må overlappe et
+          øyeblikk for at "Casper"-teksten skal kunne morfe sømløst
+          mellom dem via layoutId (se Loader.jsx og App.jsx). */}
+      <AnimatePresence>
+        {loading ? (
+          <LoadingPage key="loading" />
+        ) : (
+          // Ingen opacity-fade på selve wrapperen, siden det ville
+          // fadet ut/inn den morfende "Casper"-teksten sammen med resten.
+          <div key="content">
+            <NavBar />
+            <main className="flex-grow pt-24">
+              <AnimatePresence initial={false}>
+                <Outlet context={{ skipHomeEnterRef }} />
+              </AnimatePresence>
+            </main>
+            <Footer />
+          </div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
