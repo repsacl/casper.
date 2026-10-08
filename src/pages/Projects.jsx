@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import ProjectCard from "../components/ProjectCard";
-import ProjectModal from "../components/ProjectModal";
+import ProjectModal from "../components/Projectmodal";
 
 const container = {
   initial: {},
