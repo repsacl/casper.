@@ -10,7 +10,6 @@ function TypeWriter() {
             loop: true,
             delay: 75,
           }}
-          className="text-2xl"
         />
   )
 }

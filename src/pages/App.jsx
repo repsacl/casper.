@@ -27,10 +27,10 @@ function App() {
         duration: 0.5,
         ease: "easeInOut",
       }}
-      className="flex min-h-[calc(100vh-4rem)] w-full flex-col justify-end overflow-x-hidden px-6 pb-10 pt-24 text-left sm:px-10 lg:px-16"
+      className="flex min-h-[calc(100vh-4rem)] w-full flex-col justify-end overflow-x-hidden px-4 pb-10 pt-24 text-left sm:px-10 lg:px-16"
     >
-      <div className="mb-4 ml-1 flex max-w-xl flex-col gap-1 text-lg text-gray-600 dark:text-gray-400 sm:ml-8 sm:text-xl">
-        <span className="flex flex-wrap items-center gap-2">
+      <div className="mb-1 flex max-w-xl flex-col gap-0.5 text-xs text-gray-600 dark:text-gray-400 sm:mb-4 sm:ml-8 sm:gap-1 sm:text-base md:text-xl">
+        <span className="flex flex-wrap items-center gap-1 sm:gap-2">
           <span>Hei, mitt navn er</span>
           <span className="inline-block">
             <TypeWriter />
@@ -44,15 +44,18 @@ function App() {
           store gradient-overskriften.
           Størrelsen trappes opp gradvis over breakpointene i stedet
           for å hoppe rett fra 10rem til 22rem, som gikk utenfor
-          skjermbredden på mobil og nettbrett. */}
+          skjermbredden på mobil og nettbrett.
+          På mobil regnes størrelsen ut fra skjermbredden: "CASPER" i
+          Zain Black er ca. 4.6em bredt, så (100vw - padding) / 4.7
+          fyller bredden uten å gå utenfor. */}
       <motion.h1
         layoutId="casper-heading"
-        className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent text-6xl font-black uppercase leading-none sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[16rem] 2xl:text-[20rem]"
+        className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent text-[calc((100vw-2rem)/4.7)] font-black uppercase leading-none sm:text-[9rem] lg:text-[12rem] xl:text-[16rem] 2xl:text-[20rem]"
       >
         Casper
       </motion.h1>
 
-      <div className="mt-8 mb-8 flex flex-wrap justify-left items-center gap-4 ml-1 sm:ml-8">
+      <div className="mt-6 mb-8 flex flex-wrap justify-left items-center gap-3 sm:mt-8 sm:gap-4 sm:ml-8">
 
         <Link
           to="/projects"
