@@ -43,7 +43,7 @@ const projects = [
     ),
     linkHref: "#",
     linkLabel: "Link til spillet kommer...",
-    githubHref: "https://github.com/", // TODO: bytt ut med din repo-lenke
+    githubHref: "https://github.com/repsacl/stick-game", // TODO: bytt ut med din repo-lenke
     image: "/BildeSpill2.webp",
     imageAlt: "Skjermbilde fra plattformspillet",
     images: [
@@ -102,7 +102,7 @@ const projects = [
       </>
     ),
     githubHref: "https://github.com/repsacl/casper.",
-    image: "/portfolio.webp", // TODO: legg et skjermbilde av porteføljen i /public
+    image: "/casper.webp", // TODO: legg et skjermbilde av porteføljen i /public
     imageAlt: "Skjermbilde av denne porteføljen",
     reverse: false,
   },

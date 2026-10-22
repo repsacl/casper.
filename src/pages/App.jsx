@@ -52,7 +52,7 @@ function App() {
         layoutId="casper-heading"
         className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent text-[calc((100vw-2rem)/4.7)] font-black uppercase leading-none sm:text-[9rem] lg:text-[12rem] xl:text-[16rem] 2xl:text-[20rem]"
       >
-        Casper
+        Casper.
       </motion.h1>
 
       <div className="mt-6 mb-8 flex flex-wrap justify-left items-center gap-3 sm:mt-8 sm:gap-4 sm:ml-8">
