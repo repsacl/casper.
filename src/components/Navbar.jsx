@@ -40,14 +40,15 @@ function Navbar() {
 
     const logo = (
         <Link to="/" onClick={handleNavClick} aria-label="Hjem">
-            <motion.div
-                whileHover={{ rotate: -8, scale: 1.08 }}
+            {/* Logoen er hvit med svart tekst; invert gir svart med hvit tekst i light mode */}
+            <motion.img
+                src="/logo.svg"
+                alt=""
+                whileHover={{ rotate: -20, scale: 1.08 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: DURATION, ease: "easeInOut" }}
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-black pt-1 text-base font-bold text-white sm:h-10 sm:w-10 sm:text-xl dark:bg-white dark:text-black"
-            >
-                C.
-            </motion.div>
+                className="h-8 w-8 sm:h-10 sm:w-10 invert dark:invert-1"
+            />
         </Link>
     );
 
