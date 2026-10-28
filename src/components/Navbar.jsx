@@ -44,7 +44,7 @@ function Navbar() {
             <motion.img
                 src="/logo.svg"
                 alt=""
-                whileHover={{ rotate: -20, scale: 1.08 }}
+                whileHover={{ rotate: 360, scale: 1.3 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: DURATION, ease: "easeInOut" }}
                 className="h-8 w-8 sm:h-10 sm:w-10 invert dark:invert-1"

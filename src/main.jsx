@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'motion/react'
 
 import App from './pages/App.jsx'
 import About from './pages/About.jsx'
-import Projects from './pages/Projects.jsx'
+import Projects, { projects } from './pages/Projects.jsx'
 
 import LoadingPage from './pages/LoadingPage.jsx'
 import Nopage from './pages/Nopage.jsx'
@@ -16,7 +16,18 @@ import NavBar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Background from './components/Background.jsx'
 
+import { preloadImages } from './lib/preloadImages.js'
+
 import './index.css'
+
+// Alle bildene som skal være ferdig lastet når loaderen forsvinner.
+// Prosjektbildene hentes rett fra listen i Projects.jsx, så nye
+// prosjekter kommer automatisk med.
+const IMAGES = [
+  ...projects.map((p) => p.image),
+  ...projects.flatMap((p) => p.images?.map((i) => i.src) ?? []),
+  '/casper-siden.webp', // About-bildet
+];
 
 function Layout() {
   const location = useLocation();
@@ -37,13 +48,24 @@ function Layout() {
   useEffect(() => {
     if (!isHomePage) return;
 
-    // Hvor lenge intro-animasjonen skal vises før den viskes ut.
-    // Juster dette tallet (i ms) til det som føles riktig.
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1800);
+    let cancelled = false;
 
-    return () => clearTimeout(timer);
+    // Hvor lenge intro-animasjonen minst skal vises før den viskes ut.
+    // Juster dette tallet (i ms) til det som føles riktig.
+    const minTime = new Promise((r) => setTimeout(r, 1800));
+    // Øvre grense, så ingen på tregt nett venter evig på bildene.
+    const maxTime = new Promise((r) => setTimeout(r, 4000));
+
+    // Bildene lastes og dekodes mens intro-animasjonen spiller, så
+    // prosjektsiden ikke hakker første gang den åpnes.
+    Promise.all([
+      minTime,
+      Promise.race([preloadImages(IMAGES), maxTime]),
+    ]).then(() => {
+      if (!cancelled) setLoading(false);
+    });
+
+    return () => { cancelled = true; };
   }, [isHomePage]);
 
   return (

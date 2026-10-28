@@ -28,7 +28,7 @@ const item = {
 // Valgfrie felt for modalen:
 //   images:     [{ src: "/bilde.png", alt: "Beskrivelse" }, ...]
 //   githubHref: "https://github.com/..."
-const projects = [
+export const projects = [
   {
     number: "01",
     title: "Skoleprosjektet",
