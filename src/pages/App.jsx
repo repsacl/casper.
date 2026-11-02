@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import { Link, useOutletContext } from "react-router-dom"
 
 import TypeWriter from "@/components/ui/TypeWriter";
+import AsciiPortrait from "@/components/AsciiPortrait";
 
 function App() {
   // Satt av Layout i main.jsx. "true" kun helt til vi selv har
@@ -27,8 +28,20 @@ function App() {
         duration: 0.5,
         ease: "easeInOut",
       }}
-      className="flex min-h-[calc(100vh-4rem)] w-full flex-col justify-end overflow-x-hidden px-4 pb-10 pt-24 text-left sm:px-10 lg:px-16"
+      className="relative isolate flex min-h-[calc(100vh-4rem)] w-full flex-col justify-end overflow-x-hidden px-4 pb-10 pt-24 text-left sm:px-10 lg:px-16"
     >
+      {/* ASCII-bildet midt på siden, bak teksten. Størrelsen følger
+          høyden (ca. 74 linjer à 1.2em ≈ 71vh ved 0.8vh, og ≈ 89vh ved
+          1vh på desktop), men krympes
+          på smale skjermer så det ikke går utenfor bredden.
+          Morfer inn fra bildet i loaderen via layoutId (se Loader.jsx). */}
+      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+        <AsciiPortrait
+          className="text-[min(0.8vh,1.6vw)] lg:text-[min(1vh,1.6vw)]"
+          innerClassName="opacity-50"
+        />
+      </div>
+
       <div className="mb-1 flex max-w-xl flex-col gap-0.5 text-xs text-gray-600 dark:text-gray-400 sm:mb-4 sm:ml-8 sm:gap-1 sm:text-base md:text-xl">
         <span className="flex flex-wrap items-center gap-1 sm:gap-2">
           <span>Hei, mitt navn er</span>

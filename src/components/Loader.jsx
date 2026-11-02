@@ -15,7 +15,9 @@ const containerVariants = {
 };
 
 // Bildet kommer langt nedenfra (fra utenfor skjermen) og ankommer
-// LITT etter teksten, som om det glir opp og peker mot den
+// LITT etter teksten, som om det glir opp og peker mot den.
+// Ingen egen exit-bevegelse: som teksten morfer det via layoutId inn
+// i ASCII-bildet på forsiden (AsciiPortrait.jsx).
 const imageVariants = {
   initial: { y: "60vh", opacity: 0 },
   animate: {
@@ -24,9 +26,7 @@ const imageVariants = {
     transition: { duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.25 },
   },
   exit: {
-    y: "50vh",
-    opacity: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
+    opacity: 1,
   },
 };
 
@@ -67,17 +67,24 @@ const Loader = () => {
       </motion.h1>
 
       {/* Bildet under, glir opp nedenfra og peker opp mot teksten.
-          Naturlig portrett-format (364x604) beholdes med h-auto. */}
-      <motion.img
-        // TODO: bytt til riktig filsti, f.eks. "/casper.png" (fil i public-mappen)
-        src="/casper-opp.webp"
-        alt="Casper"
+          Naturlig portrett-format (364x604) beholdes med h-auto.
+          layoutId morfer det inn i ASCII-bildet på forsiden.
+          Inn-animasjonen ligger på en wrapper, fordi layoutId tar over
+          transform på selve bildet og ellers overstyrer y-animasjonen. */}
+      <motion.div
         variants={imageVariants}
         initial="initial"
         animate="animate"
         exit="exit"
-        className="h-[42vh] w-auto object-contain sm:h-[52vh]"
-      />
+      >
+        <motion.img
+          layoutId="casper-portrait"
+          // TODO: bytt til riktig filsti, f.eks. "/casper.png" (fil i public-mappen)
+          src="/casper-opp.webp"
+          alt="Casper"
+          className="h-[42vh] w-auto object-contain sm:h-[52vh]"
+        />
+      </motion.div>
     </motion.div>
   );
 };
