@@ -9,6 +9,7 @@ function ProjectCard({
   image,
   imageAlt,
   reverse = false,
+  header,
   onOpen,
 }) {
   const handleKeyDown = (e) => {
@@ -18,6 +19,9 @@ function ProjectCard({
     }
   };
 
+  // Kortet får en bakgrunn ved hover/trykk for å vise at det er klikkbart.
+  // Negativ margin = padding, så innholdet står på samme sted som før,
+  // men bakgrunnen strekker seg helt ut mot skillelinjene.
   return (
     <motion.div
       variants={variants}
@@ -26,59 +30,71 @@ function ProjectCard({
       aria-label={`Åpne prosjektet ${title}`}
       onClick={onOpen}
       onKeyDown={handleKeyDown}
-      className={`group flex cursor-pointer flex-col items-center gap-6 rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-8 lg:items-center lg:gap-12 dark:focus-visible:ring-offset-black ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
-        }`}
+      className="group -mx-4 cursor-pointer rounded-3xl px-4 py-8 transition-colors duration-300 hover:bg-black/[0.04] active:bg-black/[0.07] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:-mx-6 sm:px-6 sm:py-10 dark:hover:bg-white/[0.05] dark:active:bg-white/[0.08]"
     >
-      {/* Bildet ligger alltid først i DOM-en, så det havner øverst
-          på mobil uansett — reverse styrer kun venstre/høyre-siden
-          på desktop via flex-row/flex-row-reverse. */}
-      <div className="w-full sm:w-3/4 lg:w-1/2">
-        {/* layoutId gjør at bildet "flyter" over i modalen når den åpnes */}
-        <motion.div
-          layoutId={`project-image-${number ?? title}`}
-          className="overflow-hidden rounded-2xl"
-        >
-          <img
-            src={image}
-            alt={imageAlt}
-            className="h-48 w-full rounded-2xl object-cover ring-1 ring-black/10 transition-transform duration-500 group-hover:scale-[1.03] sm:h-56 md:h-64 dark:ring-white/10 lg:h-80"
-          />
-        </motion.div>
-      </div>
+      {header}
 
-      <div className="flex w-full flex-col lg:w-1/2">
-        {number && (
-          <span className="mb-2 text-sm text-gray-400 dark:text-gray-500">
-            {number}
-          </span>
-        )}
+      <div
+        className={`flex flex-col items-center gap-6 lg:gap-12 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+          }`}
+      >
+        {/* Bildet ligger alltid først i DOM-en, så det havner øverst
+            på mobil uansett — reverse styrer kun venstre/høyre-siden
+            på desktop via flex-row/flex-row-reverse. */}
+        <div className="w-full sm:w-3/4 lg:w-1/2">
+          {/* layoutId gjør at bildet "flyter" over i modalen når den åpnes */}
+          <motion.div
+            layoutId={`project-image-${number ?? title}`}
+            className="overflow-hidden rounded-2xl"
+          >
+            <img
+              src={image}
+              alt={imageAlt}
+              className="h-48 w-full rounded-2xl object-cover ring-1 ring-black/10 transition-transform duration-500 group-hover:scale-[1.03] sm:h-56 md:h-64 dark:ring-white/10 lg:h-80"
+            />
+          </motion.div>
+        </div>
 
-        <h2 className="mb-3 text-xl font-bold sm:text-2xl">
-          {title}
-          {titleLink && (
-            <>
-              {" "}
-              <a
-                href={titleLink.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="font-light text-blue-500 hover:underline"
-              >
-                {titleLink.label}
-              </a>
-            </>
+        <div className="flex w-full flex-col lg:w-1/2">
+          {number && (
+            <span className="mb-2 text-sm text-gray-400 dark:text-gray-500">
+              {number}
+            </span>
           )}
-        </h2>
 
-        {/* line-clamp kutter teksten etter 4 linjer og legger på "…" */}
-        <p className="line-clamp-4 text-sm font-medium leading-relaxed sm:text-base lg:text-lg">
-          {description}
-        </p>
+          <h2 className="mb-3 text-xl font-bold sm:text-2xl">
+            {title}
+            {titleLink && (
+              <>
+                {" "}
+                <a
+                  href={titleLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="font-light text-blue-500 hover:underline"
+                >
+                  {titleLink.label}
+                </a>
+              </>
+            )}
+          </h2>
 
-        <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-medium text-blue-500 group-hover:underline sm:text-base">
-          Les mer
-        </span>
+          {/* line-clamp kutter teksten etter 4 linjer og legger på "…" */}
+          <p className="line-clamp-4 text-sm font-medium leading-relaxed sm:text-base lg:text-lg">
+            {description}
+          </p>
+
+          <span className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-medium text-blue-500 group-hover:underline sm:text-base">
+            Les mer
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </span>
+        </div>
       </div>
     </motion.div>
   );
