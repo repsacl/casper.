@@ -68,14 +68,14 @@ function About() {
           </p>
 
           <p>
-            På videregående tok jeg studiespesialisering med realfag, og jeg har
-            alltid vært interessert i programmering. Derfor valgte jeg valgfagene
+            På videregående gikk jeg studiespesialisering med toppidrett hvor jeg gikk realfags veien.
+            Siden jeg alltid hadde vært interessert i programmering og teknologi, valgte jeg valgfagene
             IT1 og IT2. I IT1 lærte jeg grunnleggende webutvikling med HTML, CSS,
             JavaScript og SQL database. IT2 lærte jeg Python for å lage små
             applikasjoner.
           </p>
           <p>
-            Nå holder jeg på å ta en 3 årig beachlor i dataingeniør-systemutvikling. Her lærer jeg hovedsakelig java for å bli en fullstack systemutvikler.
+            Nå holder jeg på å ta en 3 årig beachlor i dataingeniør-systemutviklig på NTNU.
           </p>
         </motion.div>
 

@@ -87,7 +87,7 @@ export const projects = [
         Porteføljen du ser på nå har jeg bygget selv med React og Tailwind
         CSS. Animasjonene, som innlasting av sidene og vinduet som åpnes når
         du klikker på et prosjekt, er laget med Motion. Siden er responsiv og
-        fungerer både på mobil og desktop, og har støtte for mørk modus.
+        fungerer både på mobil og desktop, og har støtte for mørk modus og lys modus.
         Prosjektene ligger i en liste i koden, så jeg kan legge til et nytt
         prosjekt ved å legge til ett objekt. Resten av layouten ordner seg
         selv. Prosjektet har gitt meg bedre forståelse for komponentbasert
