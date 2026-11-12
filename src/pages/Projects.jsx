@@ -117,6 +117,33 @@ export const projects = [
     imageAlt: "Skjermbilde av en lego-robot",
     reverse: false,
   },
+  {
+    number: "05",
+    date: "Høst 2026",
+    title: "Repsac Launcher",
+    description: (
+      <>
+        En egen hjemskjerm for Chromecast med Google TV, skrevet i Kotlin uten
+        eksterne avhengigheter. Googles egen hjemskjerm er full av anbefalinger
+        og reklame og blir treg på enheter med lite minne, så jeg laget en som
+        bare viser appene mine, en stor klokke og mine egne bakgrunnsbilder.
+        Den har også skjermsparer med lysbildevisning, «spilles nå» fra
+        Spotify, innstillinger rett på TV-en og støtte for norsk og engelsk.
+        Prosjektet er laget med hjelp av AI, og jeg har lært mye om hvordan
+        Android-apper er bygget opp, hvordan man installerer og feilsøker på
+        en TV med adb, og hvordan man bruker AI som verktøy i et større
+        prosjekt.
+      </>
+    ),
+    githubHref: "https://github.com/repsacl/repx-tv",
+    image: "/repx-tv-1.webp",
+    imageAlt: "Hjemskjermen til Repsac Launcher på Google TV",
+    images: [
+      { src: "/repx-tv-2.webp", alt: "Hjemskjermen med fjell som bakgrunnsbilde" },
+      { src: "/repx-tv-3.webp", alt: "Hjemskjermen med en grønn by som bakgrunnsbilde" },
+    ],
+    reverse: true,
+  },
 ];
 
 // Hvor på skjermen (fra toppen) streken "er" mens man scroller.
